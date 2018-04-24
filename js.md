@@ -84,11 +84,46 @@
         * includes
     * 方法是否对原数组有影响的分析
         * https://www.jianshu.com/p/1a7c81093625
-* 事件
-    * 事件循环event loop
-        * https://zhuanlan.zhihu.com/p/33058983
-* apply call
-                
+* 对象，函数，闭包，作用域，this，原型，原型链
+    * 
+* web API
+    * BOM 浏览器对象模型
+        * window 浏览器实例
+            * 全局对象
+            * 全局方法
+            * 窗口位置大小 screenTop innerHeight
+            * 打开关闭 window.open
+            * setTimeout setInterval
+            * alert confirm prompt
+        * location
+            * hash
+            * host
+            * hostname
+            * href
+            * pathname
+            * port
+            * protocol
+            * search
+            * protocol://host:port/pathname?search#hash 
+        * navigator
+            * 检测浏览器类型
+            * userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1” 
+        * history
+            * go
+            * back
+            * forward
+            * length
+    * DOM
+    * Ajax
+        * XHR
+        * promise
+        * async / await
+    * 事件
+        * 事件循环event loop
+            * https://zhuanlan.zhihu.com/p/33058983
+        * apply call
+    * 存储
+                  
 
 
 
