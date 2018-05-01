@@ -104,11 +104,135 @@
     * this
         * reference
     * 闭包
-    * 按值传递
-    * call
-    * apply
+        * 自由变量
+        ```
+        var data = [];
+        for (var i = 0; i < 3; i++) {
+        data[i] = function () {
+            console.log(i);
+        };
+        }
+
+        data[0]();
+        data[1]();
+        data[2]();
+                * 
+        var data = [];
+
+        for (var i = 0; i < 3; i++) {
+        data[i] = (function (i) {
+                return function(){
+                    console.log(i);
+                }
+        })(i);
+        }
+
+        data[0]();
+        data[1]();
+        data[2]();
+        ```
+    * 参数按值传递
+    * call，apply
+        ```
+        Function.prototype.call = function (context) {
+            var context = context || window;
+            context.fn = this;
+
+            var args = [];
+            for(var i = 1, len = arguments.length; i < len; i++) {
+                args.push('arguments[' + i + ']');
+            }
+
+            var result = eval('context.fn(' + args +')');
+
+            delete context.fn
+            return result;
+        }
+        ```
+        * 
+        ```
+        Function.prototype.apply = function (context, arr) {
+            var context = Object(context) || window;
+            context.fn = this;
+
+            var result;
+            if (!arr) {
+                result = context.fn();
+            }
+            else {
+                var args = [];
+                for (var i = 0, len = arr.length; i < len; i++) {
+                    args.push('arr[' + i + ']');
+                }
+                result = eval('context.fn(' + args + ')')
+            }
+
+            delete context.fn
+            return result;
+        }
+        ```
+        * call参数明确，效率更高
+            * .apply在运行前要对作为参数的数组进行一系列检验和深拷贝，.call则没有这些步骤，所以运行效率高。(http://blog.leanote.com/post/walkerking/apply%E5%92%8Ccall)
+            * backbone
+                ``` 
+                var triggerEvents = function(events, args) {
+                    var ev, i = -1, l = events.length, a1 = args[0], a2 = args[1], a3 = args[2];
+                    switch (args.length) {
+                    case 0: while (++i < l) (ev = events[i]).callback.call(ev.ctx); return;
+                    case 1: while (++i < l) (ev = events[i]).callback.call(ev.ctx, a1); return;
+                    case 2: while (++i < l) (ev = events[i]).callback.call(ev.ctx, a1, a2); return;
+                    case 3: while (++i < l) (ev = events[i]).callback.call(ev.ctx, a1, a2, a3); return;
+                    default: while (++i < l) (ev = events[i]).callback.apply(ev.ctx, args); return;
+                    }
+                };
+                ```
+            * underscore
+                ```
+                var optimizeCb = function(func, context, argCount) { if (context === void 0) return func; switch (argCount) { case 1: return function(value) { return func.call(context, value); }; // The 2-parameter case has been omitted only because no current consumers // made use of it. case null: case 3: return function(value, index, collection) { return func.call(context, value, index, collection); }; case 4: return function(accumulator, value, index, collection) { return func.call(context, accumulator, value, index, collection); }; } return function() { return func.apply(context, arguments); }; };
+                ```
+            * ecma
     * bind
+        ```
+        Function.prototype.bind = function (context) {
+
+            if (typeof this !== "function") {
+            throw new Error("Function.prototype.bind - what is trying to be bound is not callable");
+            }
+
+            var self = this;
+            var args = Array.prototype.slice.call(arguments, 1);
+
+            var fNOP = function () {};
+
+            var fBound = function () {
+                var bindArgs = Array.prototype.slice.call(arguments);
+                return self.apply(this instanceof fNOP ? this : context, args.concat(bindArgs));
+            }
+
+            fNOP.prototype = this.prototype;
+            fBound.prototype = new fNOP();
+            return fBound;
+        }
+        ```
     * new
+        ```
+        function objectFactory() {
+
+            var obj = new Object(),
+
+            Constructor = [].shift.call(arguments);
+
+            obj.__proto__ = Constructor.prototype;
+
+            var ret = Constructor.apply(obj, arguments);
+
+            return typeof ret === 'object' ? ret : obj;
+
+        };
+        ```
+    * arguments
+        * callee
+    * 创建对象
     * 继承
 * web API
     * BOM 浏览器对象模型
