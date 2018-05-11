@@ -264,13 +264,65 @@
     * DOM
     * Ajax
         * XHR
-        * promise
-        * async / await
+        * let xhr = new XMLHttpRequest()
+        * xhr属性
+            * readyState
+                * 0 未初始化
+                * 1 启动 open
+                * 2 发送 send
+                * 3 接受 send中
+                * 4 完成 
+            * responseText：作为响应主体被返回的文本
+            * responseXML
+            * status: 响应HTTP状态码
+            * statusText：HTTP状态说明
+        * xhr方法
+            * open(method, url , async = true)
+            * setRequestHeader
+            * send
+        * xhr事件
+            * onreadystatechange
+            * onload等7个
+        * 上传与下载进度事件
+            * xhr.upload.onprogress
+            * xhr.onprogress
+        * https://segmentfault.com/a/1190000004322487 （完整介绍xhr）
+    * promise
+        
+    * async / await
+        * https://mp.weixin.qq.com/s/jZa0YEhUov0xqMAmDDrzfg
+    * axios
+        
     * 事件
         * 事件循环event loop
             * https://zhuanlan.zhihu.com/p/33058983
         * apply call
     * 存储
+* 网络安全
+    * HTTP协议
+        * 《图解HTTP》
+            * http状态码
+                * 200 成功
+                * 204 成功但是不返回实体，即客户端无更新
+                * 206 范围请求
+                * 301永久性重定向
+                * 302 临时性重定向
+                * 303 资源重定向了，需要使用GET方法请求新的URL，类似302
+                * 304 根据条件判断 https://blog.csdn.net/netdxy/article/details/50670734
+                * 307 临时重定向 类似302
+                * 400 请求报文存在语法错误
+                * 401 需要认证
+                * 403 被服务器拒绝了
+                * 500 服务器发生故障
+                * 503 暂时无法处理请求，正在维护或超负荷状态
+        * http缓存
+            * 
+            * http://www.cnblogs.com/kevin2chen/archive/2017/02/22/6431322.html
+            * http://louiszhai.github.io/2017/04/07/http-cache/
+* 性能优化
+    * https://juejin.im/post/59d489156fb9a00a571d6509
+* webpack
+
                   
 
 
