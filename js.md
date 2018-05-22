@@ -319,9 +319,50 @@
             * 
             * http://www.cnblogs.com/kevin2chen/archive/2017/02/22/6431322.html
             * http://louiszhai.github.io/2017/04/07/http-cache/
+            * 审批上传图片出现缓存错误图片的案例
+                * 强制刷新用户缓存，更新URL地址或者给URL加上时间戳
+* 网络攻击
+    * XSS
+        * https://mp.weixin.qq.com/s/GMA2OpBLtRTEU2E2DoE_iQ
+        * https://juejin.im/post/5aa7c379518825557c012b5f
+        * http://www.cnblogs.com/lovesong/p/5199623.html
+    * DDos
 * 性能优化
+    * SEO
+        * 概念
+            * https://blog.csdn.net/diligentkong/article/details/72902847
+            * http://www.xminseo.com/2652.html
+        * 优化方向
+            * 内容
+            * 站内优化
+                * keywords
+                * title
+                * description
+                * 网站结构
+            * 站外优化
+                * 发布外链
+                * sitemap
+                * 站长工具
+        * 好文章 https://medium.com/@coderacademy/15-seo-tips-every-front-end-developer-should-know-in-2016-d579b7cefb01
     * https://juejin.im/post/59d489156fb9a00a571d6509
 * webpack
+    * parcel（ https://zhuanlan.zhihu.com/p/34033344
+* 同构直出SSR
+* 设计模式
+    * 并没有写的特别好。。。（https://github.com/ToNiQian/js-design-pattern）
+* 函数式编程
+    * 柯里化，闭包，高阶函数
+        * 函数柯里化 闭包
+            * https://github.com/mqyqingfeng/Blog/issues/42
+            * add(1)(2)(3)(4)
+                * http://www.css88.com/archives/5147
+    * 命令式 ✖️ 声明式 ☑️
+    * 函数式编程
+        * https://zhuanlan.zhihu.com/p/21714695
+        * https://zhuanlan.zhihu.com/p/21926955
+        * https://zhuanlan.zhihu.com/p/22094473
+    * http://taobaofed.org/blog/2017/03/16/javascript-functional-programing/
+    * FRP 函数响应式编程 RxJS
 
                   
 
