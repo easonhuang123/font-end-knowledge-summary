@@ -230,10 +230,30 @@
 
         };
         ```
-    * arguments
-        * callee
-    * 创建对象
+    * 要创建Person的新实例，必须使用new操作符。以这种方式调用构造函数实际上会经历以下4个步骤：
+        * （1）创建一个新对象；
+        * （2）将构造函数的作用域赋给新对象（因此this就指向了这个对象）；
+        * （3）执行构造函数中的代码（为这个新对象添加属性）；
+        * （4）返回新对象。
+    arguments
+    * callee
+    创建对象
+        * 工厂模式 构造函数模式 优缺点 区别（https://blog.csdn.net/flyingpig2016/article/details/52939679）
     * 继承
+    * callback
+        * 用法
+            * 事件监听
+            * arr.map(item => console.log())
+        * 和promise的区别
+    * 对象克隆clone
+        * 浅克隆
+            * 仅依次复制，不会递归复制
+            * Object.assign()
+        * 深克隆
+            * JQ（递归）
+            * lodash(解决ES6新标准，环对象）
+            * JSON（投机取巧）
+            * http://jerryzou.com/posts/dive-into-deep-clone-in-javascript/
 * web API
     * BOM 浏览器对象模型
         * window 浏览器实例
@@ -294,6 +314,8 @@
     * axios
         
     * 事件
+        * 事件委托
+            * https://zhuanlan.zhihu.com/p/26536815
         * 事件循环event loop
             * https://zhuanlan.zhihu.com/p/33058983
         * apply call
@@ -363,6 +385,38 @@
         * https://zhuanlan.zhihu.com/p/22094473
     * http://taobaofed.org/blog/2017/03/16/javascript-functional-programing/
     * FRP 函数响应式编程 RxJS
+* PWA
+    * 概述 https://lavas.baidu.com/pwa
+    * service-worker
+        * https://developers.google.cn/web/fundamentals/primers/service-workers/
+    * 插件
+        * appcache-webpack-plugin
+        * sw-precache-webpack-plugin
+* script标签
+    * https://juejin.im/entry/598a9fcf6fb9a03c350a5cf9
+* 浏览器
+    * 解析渲染
+    * V8
+        * https://zhuanlan.zhihu.com/p/27628685
+        * http://newhtml.net/v8-full-compiler/
+        * http://newhtml.net/v8-garbage-collection/
+        * http://zhangzhaoaaa.iteye.com/blog/2183520
+* JSBridge
+    * hybird
+        * prompt
+        * 协议iframe
+        * 注入全局对象API
+    * RN
+    * 项目中使用了“混合模式”，将js等静态资源打包上传到客户端，用户无需每次打开页面都重新加载这些静态资源，弊端：开发不方便，有顽固缓存
+    * https://juejin.im/post/5abca877f265da238155b6bc
+* node
+* vue
+    * 源码解读
+        * http://hcysun.me/vue-design/
+* 面试问答
+    * https://juejin.im/entry/59b3b5ecf265da0652707150
+    * https://www.zhihu.com/question/35323603（vue源码，nexttick，watch，pdfkit)
+    * https://github.com/fejes713/30-seconds-of-interviews
 
                   
 
