@@ -413,10 +413,38 @@
 * vue
     * 源码解读
         * http://hcysun.me/vue-design/
+* webpack
+    * happypack和dll plugin
+        * https://medium.com/@Erichain/%E4%BD%BF%E7%94%A8-happypack-%E5%92%8C-dllplugin-%E6%9D%A5%E6%8F%90%E5%8D%87%E4%BD%A0%E7%9A%84-webpack-%E6%9E%84%E5%BB%BA%E9%80%9F%E5%BA%A6-7a1c41c5e78b
+    * webpack-dev-server 和 webpack-dev-middleware
+        * https://stackoverflow.com/questions/42294827/webpack-vs-webpack-dev-server-vs-webpack-dev-middleware-vs-webpack-hot-middlewar
+        * https://www.cnblogs.com/wangpenghui522/p/6826182.html
+    * http-proxy-middleware
+        * https://www.jianshu.com/p/a248b146c55a
+    * 博文
+        * 基础篇https://juejin.im/post/5ab79fa75188255582525400
+        * 进阶篇https://juejin.im/post/5ab7c222f265da237f1e4434
+* npm 
+    * npm linkhttps://www.cnblogs.com/or2-/p/3572174.html
+* 本地跑一个html，用serve
+* git指令
+* Linux指令
+    * lsof https://blog.csdn.net/xifeijian/article/details/9088137
+        * 端口被占用时杀掉端口的进程： lsof -i :9999 & kill -9 xxxx
+* 前端模块化
+    * 模块化
+        * https://leohxj.gitbooks.io/front-end-database/javascript-modules/modules-intro.html
+    * AMD
+    * CommonJS
+    * UMD
+    * requireJS
+* 算法与数据结构
+    * https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md
 * 面试问答
     * https://juejin.im/entry/59b3b5ecf265da0652707150
     * https://www.zhihu.com/question/35323603（vue源码，nexttick，watch，pdfkit)
     * https://github.com/fejes713/30-seconds-of-interviews
+    * https://zhoukekestar.github.io/notes/2017/06/07/interview-answers.html
 
                   
 
